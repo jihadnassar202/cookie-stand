@@ -33,25 +33,19 @@ const hours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm
           },
         
           showResults(parentElement) {
-            const h2 = document.createElement('h2');
-            h2.textContent = this.name;
-            parentElement.appendChild(h2);
-        
-            const ul = document.createElement('ul');
-        
-            for (let i = 0; i < hours.length; i++) {
-              const li = document.createElement('li');
-              li.textContent = `${hours[i]}: ${this.cookiesEachHour[i]} cookies`;
-              ul.appendChild(li);
-            }
-        
-            const totalLi = document.createElement('li');
-            totalLi.textContent = `Total: ${this.totalSales} cookies`;
-            ul.appendChild(totalLi);
-        
-            parentElement.appendChild(ul);
-          }
-        };
+            //Use template literals in your JS logic to render the stores as lists on the sales page.
+                const storeList = document.createElement('ul');
+                {
+                storeList.innerHTML = `
+                <h2>${this.name}</h2>`
+                for (let i = 0; i < hours.length; i++) {
+                storeList.innerHTML += `
+                <ul>
+                <li>${hours[i]}: ${this.cookiesEachHour[i]} cookies</li>`
+                }
+                storeList.innerHTML += `
+                <li>Total: ${this.totalSales} cookies</li>`;
+                parentElement.appendChild(storeList);}}};
 const tokyoSales={
     name:'Tokyo',
     minCustomers:3,
@@ -83,25 +77,19 @@ const tokyoSales={
       },
     
       showResults(parentElement) {
-        const h2 = document.createElement('h2');
-        h2.textContent = this.name;
-        parentElement.appendChild(h2);
-    
-        const ul = document.createElement('ul');
-    
-        for (let i = 0; i < hours.length; i++) {
-          const li = document.createElement('li');
-          li.textContent = `${hours[i]}: ${this.cookiesEachHour[i]} cookies`;
-          ul.appendChild(li);
-        }
-    
-        const totalLi = document.createElement('li');
-        totalLi.textContent = `Total: ${this.totalSales} cookies`;
-        ul.appendChild(totalLi);
-    
-        parentElement.appendChild(ul);
-      }
-    };
+        //Use template literals in your JS logic to render the stores as lists on the sales page.
+            const storeList = document.createElement('ul');
+            {
+            storeList.innerHTML = `
+            <h2>${this.name}</h2>`
+            for (let i = 0; i < hours.length; i++) {
+            storeList.innerHTML += `
+            <ul>
+            <li>${hours[i]}: ${this.cookiesEachHour[i]} cookies</li>`
+            }
+            storeList.innerHTML += `
+            <li>Total: ${this.totalSales} cookies</li>`;
+            parentElement.appendChild(storeList);}}};
 const dubaiSales={
     name:'Dubai',
     minCustomers:11,
@@ -133,25 +121,19 @@ const dubaiSales={
       },
     
       showResults(parentElement) {
-        const h2 = document.createElement('h2');
-        h2.textContent = this.name;
-        parentElement.appendChild(h2);
-    
-        const ul = document.createElement('ul');
-    
-        for (let i = 0; i < hours.length; i++) {
-          const li = document.createElement('li');
-          li.textContent = `${hours[i]}: ${this.cookiesEachHour[i]} cookies`;
-          ul.appendChild(li);
-        }
-    
-        const totalLi = document.createElement('li');
-        totalLi.textContent = `Total: ${this.totalSales} cookies`;
-        ul.appendChild(totalLi);
-    
-        parentElement.appendChild(ul);
-      }
-    };
+        //Use template literals in your JS logic to render the stores as lists on the sales page.
+            const storeList = document.createElement('ul');
+            {
+            storeList.innerHTML = `
+            <h2>${this.name}</h2>`
+            for (let i = 0; i < hours.length; i++) {
+            storeList.innerHTML += `
+            <ul>
+            <li>${hours[i]}: ${this.cookiesEachHour[i]} cookies</li>`
+            }
+            storeList.innerHTML += `
+            <li>Total: ${this.totalSales} cookies</li>`;
+            parentElement.appendChild(storeList);}}};
 const parisSales={
     name:'Paris',
     minCustomers:20,
@@ -183,25 +165,19 @@ const parisSales={
       },
     
       showResults(parentElement) {
-        const h2 = document.createElement('h2');
-        h2.textContent = this.name;
-        parentElement.appendChild(h2);
-    
-        const ul = document.createElement('ul');
-    
-        for (let i = 0; i < hours.length; i++) {
-          const li = document.createElement('li');
-          li.textContent = `${hours[i]}: ${this.cookiesEachHour[i]} cookies`;
-          ul.appendChild(li);
-        }
-    
-        const totalLi = document.createElement('li');
-        totalLi.textContent = `Total: ${this.totalSales} cookies`;
-        ul.appendChild(totalLi);
-    
-        parentElement.appendChild(ul);
-      }
-    };
+        //Use template literals in your JS logic to render the stores as lists on the sales page.
+            const storeList = document.createElement('ul');
+            {
+            storeList.innerHTML = `
+            <h2>${this.name}</h2>`
+            for (let i = 0; i < hours.length; i++) {
+            storeList.innerHTML += `
+            <ul>
+            <li>${hours[i]}: ${this.cookiesEachHour[i]} cookies</li>`
+            }
+            storeList.innerHTML += `
+            <li>Total: ${this.totalSales} cookies</li>`;
+            parentElement.appendChild(storeList);}}};
 const limaSales={
     name:'Lima',
     minCustomers:2,
@@ -233,7 +209,21 @@ const limaSales={
       },
     
       showResults(parentElement) {
-        const h2 = document.createElement('h2');
+        //Use template literals in your JS logic to render the stores as lists on the sales page.
+            const storeList = document.createElement('ul');
+            {
+            storeList.innerHTML = `
+            <h2>${this.name}</h2>`
+            for (let i = 0; i < hours.length; i++) {
+            storeList.innerHTML += `
+            <ul>
+            <li>${hours[i]}: ${this.cookiesEachHour[i]} cookies</li>`
+            }
+            storeList.innerHTML += `
+            <li>Total: ${this.totalSales} cookies</li>`;
+            parentElement.appendChild(storeList);}}}
+
+       /* const h2 = document.createElement('h2');
         h2.textContent = this.name;
         parentElement.appendChild(h2);
     
@@ -249,9 +239,8 @@ const limaSales={
         totalLi.textContent = `Total: ${this.totalSales} cookies`;
         ul.appendChild(totalLi);
     
-        parentElement.appendChild(ul);
-}
-    };
+        parentElement.appendChild(ul);*/
+//}
     const sales = document.getElementById('sales');
     const stores = [seattleSales, tokyoSales, dubaiSales, parisSales, limaSales];
     stores.forEach(store => {

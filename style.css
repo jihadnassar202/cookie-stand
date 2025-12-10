@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'georgia';
     font-size: 16px;
     line-height: 1.5;
     color:#0A3D62;
@@ -15,6 +15,7 @@ header{
     color: #fff;
     padding: 1rem;
     text-align: center;
+    font-family: sans-serif;
 }
 nav{
     display: flex;
@@ -42,9 +43,14 @@ img{
 #sales {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    background: #e9e9e9;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    margin: 1rem;
 }
 #sales h2{
     text-align: center;
