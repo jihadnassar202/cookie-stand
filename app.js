@@ -20,7 +20,6 @@ function CookieStand(name, minCustomers, maxCustomers, avgCookiesPerCustomer) {
             this.customersPerHour.push(this.randomCustomers());
         }
     };
-    
     this.calcCookiesPerHour = function() {
         this.cookiesPerHour = [];
         this.totalSales = 0;
@@ -132,5 +131,4 @@ renderThead(thead);
 stores.forEach(store => {
     renderStore(tbody, store);
 });
-
 renderTfoot(tfoot, stores);
