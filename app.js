@@ -1,12 +1,11 @@
 'use strict';
-const hours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
+const hours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
     const seattleSales=
     {
         name:'Seattle',
         minCustomers:23,
         maxCustomers:65,
         avgCookiesPerCustomer:6.3,
-
         customersPerHour:[],
         cookiesPerHour:[],
         totalSales:0,
@@ -14,26 +13,25 @@ const hours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm
             return Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
           },
         
-          calcCustomersEachHour() {
-            this.customersEachHour = [];
+          calcCustomersPerHour() {
+            this.customersPerHour = [];
             for (let i = 0; i < hours.length; i++) {
-              this.customersEachHour.push(this.randomCustomers());
+              this.customersPerHour.push(this.randomCustomers());
             }
           },
         
-          calcCookiesEachHour() {
-            this.cookiesEachHour = [];
+          calcCookiesPerHour() {
+            this.cookiesPerHour = [];
             this.totalSales = 0;
         
             for (let i = 0; i < hours.length; i++) {
-              const cookies = Math.round(this.customersEachHour[i] * this.avgCookiesPerCustomer);
-              this.cookiesEachHour.push(cookies);
+              const cookies = Math.round(this.customersPerHour[i] * this.avgCookiesPerCustomer);
+              this.cookiesPerHour.push(cookies);
               this.totalSales += cookies;
             }
           },
         
           showResults(parentElement) {
-            //Use template literals in your JS logic to render the stores as lists on the sales page.
                 const storeList = document.createElement('ul');
                 {
                 storeList.innerHTML = `
@@ -41,7 +39,7 @@ const hours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm
                 for (let i = 0; i < hours.length; i++) {
                 storeList.innerHTML += `
                 <ul>
-                <li>${hours[i]}: ${this.cookiesEachHour[i]} cookies</li>`
+                <li>${hours[i]}: ${this.cookiesPerHour[i]} cookies</li>`
                 }
                 storeList.innerHTML += `
                 <li>Total: ${this.totalSales} cookies</li>`;
@@ -58,26 +56,25 @@ const tokyoSales={
         return Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       },
     
-      calcCustomersEachHour() {
-        this.customersEachHour = [];
+      calcCustomersPerHour() {
+        this.customersPerHour = [];
         for (let i = 0; i < hours.length; i++) {
-          this.customersEachHour.push(this.randomCustomers());
+          this.customersPerHour.push(this.randomCustomers());
         }
       },
     
-      calcCookiesEachHour() {
-        this.cookiesEachHour = [];
+      calcCookiesPerHour() {
+        this.cookiesPerHour = [];
         this.totalSales = 0;
     
         for (let i = 0; i < hours.length; i++) {
-          const cookies = Math.round(this.customersEachHour[i] * this.avgCookiesPerCustomer);
-          this.cookiesEachHour.push(cookies);
+          const cookies = Math.round(this.customersPerHour[i] * this.avgCookiesPerCustomer);
+          this.cookiesPerHour.push(cookies);
           this.totalSales += cookies;
         }
       },
     
       showResults(parentElement) {
-        //Use template literals in your JS logic to render the stores as lists on the sales page.
             const storeList = document.createElement('ul');
             {
             storeList.innerHTML = `
@@ -85,7 +82,7 @@ const tokyoSales={
             for (let i = 0; i < hours.length; i++) {
             storeList.innerHTML += `
             <ul>
-            <li>${hours[i]}: ${this.cookiesEachHour[i]} cookies</li>`
+            <li>${hours[i]}: ${this.cookiesPerHour[i]} cookies</li>`
             }
             storeList.innerHTML += `
             <li>Total: ${this.totalSales} cookies</li>`;
@@ -102,26 +99,25 @@ const dubaiSales={
         return Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       },
     
-      calcCustomersEachHour() {
-        this.customersEachHour = [];
+      calcCustomersPerHour() {
+        this.customersPerHour = [];
         for (let i = 0; i < hours.length; i++) {
-          this.customersEachHour.push(this.randomCustomers());
+          this.customersPerHour.push(this.randomCustomers());
         }
       },
     
-      calcCookiesEachHour() {
-        this.cookiesEachHour = [];
+      calcCookiesPerHour() {
+        this.cookiesPerHour = [];
         this.totalSales = 0;
     
         for (let i = 0; i < hours.length; i++) {
-          const cookies = Math.round(this.customersEachHour[i] * this.avgCookiesPerCustomer);
-          this.cookiesEachHour.push(cookies);
+          const cookies = Math.round(this.customersPerHour[i] * this.avgCookiesPerCustomer);
+          this.cookiesPerHour.push(cookies);
           this.totalSales += cookies;
         }
       },
     
       showResults(parentElement) {
-        //Use template literals in your JS logic to render the stores as lists on the sales page.
             const storeList = document.createElement('ul');
             {
             storeList.innerHTML = `
@@ -129,7 +125,7 @@ const dubaiSales={
             for (let i = 0; i < hours.length; i++) {
             storeList.innerHTML += `
             <ul>
-            <li>${hours[i]}: ${this.cookiesEachHour[i]} cookies</li>`
+            <li>${hours[i]}: ${this.cookiesPerHour[i]} cookies</li>`
             }
             storeList.innerHTML += `
             <li>Total: ${this.totalSales} cookies</li>`;
@@ -146,26 +142,24 @@ const parisSales={
         return Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       },
     
-      calcCustomersEachHour() {
-        this.customersEachHour = [];
+      calcCustomersPerHour() {
+        this.customersPerHour = [];
         for (let i = 0; i < hours.length; i++) {
-          this.customersEachHour.push(this.randomCustomers());
+          this.customersPerHour.push(this.randomCustomers());
         }
       },
     
-      calcCookiesEachHour() {
-        this.cookiesEachHour = [];
+      calcCookiesPerHour() {
+        this.cookiesPerHour = [];
         this.totalSales = 0;
     
         for (let i = 0; i < hours.length; i++) {
-          const cookies = Math.round(this.customersEachHour[i] * this.avgCookiesPerCustomer);
-          this.cookiesEachHour.push(cookies);
+          const cookies = Math.round(this.customersPerHour[i] * this.avgCookiesPerCustomer);
+          this.cookiesPerHour.push(cookies);
           this.totalSales += cookies;
         }
       },
-    
-      showResults(parentElement) {
-        //Use template literals in your JS logic to render the stores as lists on the sales page.
+          showResults(parentElement) {
             const storeList = document.createElement('ul');
             {
             storeList.innerHTML = `
@@ -173,7 +167,7 @@ const parisSales={
             for (let i = 0; i < hours.length; i++) {
             storeList.innerHTML += `
             <ul>
-            <li>${hours[i]}: ${this.cookiesEachHour[i]} cookies</li>`
+            <li>${hours[i]}: ${this.cookiesPerHour[i]} cookies</li>`
             }
             storeList.innerHTML += `
             <li>Total: ${this.totalSales} cookies</li>`;
@@ -190,61 +184,43 @@ const limaSales={
         return Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers;
       },
     
-      calcCustomersEachHour() {
-        this.customersEachHour = [];
+      calcCustomersPerHour() {
+        this.customersPerHour = [];
         for (let i = 0; i < hours.length; i++) {
-          this.customersEachHour.push(this.randomCustomers());
+          this.customersPerHour.push(this.randomCustomers());
         }
       },
     
-      calcCookiesEachHour() {
-        this.cookiesEachHour = [];
+      calcCookiesPerHour() {
+        this.cookiesPerHour = [];
         this.totalSales = 0;
     
         for (let i = 0; i < hours.length; i++) {
-          const cookies = Math.round(this.customersEachHour[i] * this.avgCookiesPerCustomer);
-          this.cookiesEachHour.push(cookies);
+          const cookies = Math.round(this.customersPerHour[i] * this.avgCookiesPerCustomer);
+          this.cookiesPerHour.push(cookies);
           this.totalSales += cookies;
         }
       },
     
       showResults(parentElement) {
-        //Use template literals in your JS logic to render the stores as lists on the sales page.
             const storeList = document.createElement('ul');
-            {
+      
             storeList.innerHTML = `
             <h2>${this.name}</h2>`
             for (let i = 0; i < hours.length; i++) {
             storeList.innerHTML += `
             <ul>
-            <li>${hours[i]}: ${this.cookiesEachHour[i]} cookies</li>`
+            <li>${hours[i]}: ${this.cookiesPerHour[i]} cookies</li>`
             }
             storeList.innerHTML += `
             <li>Total: ${this.totalSales} cookies</li>`;
-            parentElement.appendChild(storeList);}}}
+            parentElement.appendChild(storeList);}}
 
-       /* const h2 = document.createElement('h2');
-        h2.textContent = this.name;
-        parentElement.appendChild(h2);
-    
-        const ul = document.createElement('ul');
-    
-        for (let i = 0; i < hours.length; i++) {
-          const li = document.createElement('li');
-          li.textContent = `${hours[i]}: ${this.cookiesEachHour[i]} cookies`;
-          ul.appendChild(li);
-        }
-    
-        const totalLi = document.createElement('li');
-        totalLi.textContent = `Total: ${this.totalSales} cookies`;
-        ul.appendChild(totalLi);
-    
-        parentElement.appendChild(ul);*/
-//}
+       
     const sales = document.getElementById('sales');
     const stores = [seattleSales, tokyoSales, dubaiSales, parisSales, limaSales];
     stores.forEach(store => {
-      store.calcCustomersEachHour();
-      store.calcCookiesEachHour();
+      store.calcCustomersPerHour();
+      store.calcCookiesPerHour();
       store.showResults(sales);
     });
