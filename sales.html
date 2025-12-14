@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pat's cookie stand</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,16 +13,29 @@
     <header>
         <nav>
             <h1><a href="index.html"><img src="salmon.png" alt="salmon cookie"></a> pat's cookie stand</h1>
-        <a href="index.html" CLASS="button">Home</a>            
-        <a href="sales.html" CLASS="button">sales</a>
+        <a href="index.html" class="button">Home</a>            
+        <a href="sales.html" class="button">sales</a>
         </nav>
     </header>
     <main>
         <section>
             <h2>sales data</h2>
+            <form class="inputForm">
+                <label for="Name">Branch location</label>
+                <input type="text" id="Name">
+                <label for="minCustomers">Minimum Customers Per Hour</label>
+                <input type="number" id="minCustomers" min="0">
+                <label for="maxCustomers">Maximum Customers Per Hour</label>
+                <input type="number" id="maxCustomers" min="0">
+                <label for="avgCookiesPerCustomer">Average Cookies Per Customer</label>
+                <input type="number" id="avgCookiesPerCustomer">
+                <input type="button" id="addlocation" value="Add Location">
+            </form>
             <p>sales data for the week</p>
         </section>
-        <section id="sales"></section>
+        <section id="sales">
+           
+        </section>
     </main>
     <footer>
         <p>&copy; 2025, All rights reserved, pat's cookie stand</p>
