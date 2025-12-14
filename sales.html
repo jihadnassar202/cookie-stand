@@ -20,16 +20,16 @@
     <main>
         <section>
             <h2>sales data</h2>
-            <form class="inputForm">
+            <form id="inputForm">
                 <label for="Name">Branch location</label>
-                <input type="text" id="Name">
+                <input type="text" id="Name" required>
                 <label for="minCustomers">Minimum Customers Per Hour</label>
-                <input type="number" id="minCustomers" min="0">
+                <input type="number" id="minCustomers" min="0" required>
                 <label for="maxCustomers">Maximum Customers Per Hour</label>
-                <input type="number" id="maxCustomers" min="0">
+                <input type="number" id="maxCustomers" min="0" required>
                 <label for="avgCookiesPerCustomer">Average Cookies Per Customer</label>
-                <input type="number" id="avgCookiesPerCustomer">
-                <input type="button" id="addlocation" value="Add Location">
+                <input type="number" id="avgCookiesPerCustomer" min="0">
+                <input type="submit" id="addlocation" value="Add Location" required>
             </form>
             <p>sales data for the week</p>
         </section>

@@ -114,5 +114,46 @@ table.appendChild(tfoot);
 
 const sales=document.getElementById('sales');//sales data section
 sales.appendChild(table);
-}           
+}
 renderTable(stores);
+
+const form=document.getElementById('inputForm');
+form.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    const name=document.getElementById('Name').value;
+    const min=document.getElementById('minCustomers').value;
+    const max=document.getElementById('maxCustomers').value;
+    const avg=document.getElementById('avgCookiesPerCustomer').value;
+    const newStore=new CookieStore(name,min,max,avg);
+    newStore.calcCustomersEachHour();
+    newStore.calcCookiesEachHour();
+    newStore.calcTotalSales();
+    stores.push(newStore);
+
+    const table=document.querySelector('#sales');
+    const tbody=table.querySelector('tbody');
+    const tr=document.createElement('tr');
+    
+    const namecell=document.createElement('td');
+    namecell.textContent=name;
+    tr.appendChild(namecell);
+    for(let i=0;i<hours.length;i++){
+        const hourcell=document.createElement('td');
+        hourcell.textContent=newStore.cookiesEachHour[i];
+        tr.appendChild(hourcell);
+    }
+    const totalcell=document.createElement('td');
+    totalcell.textContent=newStore.totalSales;
+    tr.appendChild(totalcell);
+    tbody.appendChild(tr);
+    const grandtotalcell=document.createElement('td');
+    grandtotalcell.textContent=grandtotal;
+    tfoot.appendChild(grandtotalcell);
+    table.appendChild(tfoot);
+    
+    form .reset();
+    
+    
+   
+
+});
